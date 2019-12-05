@@ -22,6 +22,6 @@ steps:
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: 'mobile-samples/AnalogClock/AnalogClock.Android/*droid*.csproj'
+    projectFile: 'mobile-samples/AnalogClock/AnalogClock.Android/AnalogClock.Android.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
