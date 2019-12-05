@@ -25,3 +25,14 @@ steps:
     projectFile: 'AnalogClock/AnalogClock.Android/AnalogClock.Android.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'AnalogClock'
+    ArtifactName: 'drop'
+    publishLocation: 'container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'AnalogClock'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
