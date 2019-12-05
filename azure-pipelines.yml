@@ -18,10 +18,10 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '**/*.sln'
+    restoreSolution: 'mobile-samples/AnalogClock/*.sln'
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: '**/*droid*.csproj'
+    projectFile: 'mobile-samples/AnalogClock/AnalogClock.Android/*droid*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
