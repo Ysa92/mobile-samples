@@ -25,14 +25,16 @@ steps:
     projectFile: 'AnalogClock/AnalogClock.Android/AnalogClock.Android.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '$(outputDirectory)/*.apk'
+    apksignerKeystoreFile: 'debug.keystore'
+    apksignerKeystorePassword: 'android'
+    apksignerKeystoreAlias: 'androiddebugkey'
+    apksignerKeyPassword: 'android'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'AnalogClock'
+    PathtoPublish: '$(outputDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'container'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'AnalogClock'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
